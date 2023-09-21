@@ -1,0 +1,17 @@
+How 3-way TCP handshake works
+
+The three-way TCP handshake is a process that establishes a reliable connection between two devices over a TCP/IP network.
+  
+TCP Handshakke process:
+
+SYN (Synchronize): The client sends a TCP packet with the SYN flag set to the server. This packet contains an initial sequence number (ISN) to start the conversation.
+
+SYN-ACK (Synchronize-Acknowledge): The server responds with a TCP packet. It sets the SYN and ACK flags, acknowledging the client's request. It also generates its own ISN for this connection.
+
+ACK (Acknowledge): Finally, the client acknowledges the server's response by sending another TCP packet with the ACK flag set. The sequence number in this packet is incremented by 1, 
+
+confirming that both sides have synchronized their sequence numbers.
+
+At this point, the three-way handshake is complete, and a reliable TCP connection has been established. Both devices are ready to exchange data with each other, 
+  
+knowing that the connection is valid and error-checked. This process helps ensure data integrity and proper communication between devices in a TCP/IP network.
