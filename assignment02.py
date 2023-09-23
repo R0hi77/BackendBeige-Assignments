@@ -7,8 +7,8 @@ initialBalance = 1000.00
 
 
 def optionsMenu(dict):
-    for key, value in dict.items():
-        print(f"{key}: {Value})
+    for value in range(1,len(menu)+1):
+        print(f"{value}: {menu[Value]})
 
 
 def airtime (balance):
