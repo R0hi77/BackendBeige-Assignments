@@ -18,7 +18,7 @@ def airtime (balance):
     if amount > balance:
         print("insufficient balance")
     else:
-        print(f"You have succesfully bought GHs{amount} airtime")
+        print(f"You have successfully bought GHs{amount} airtime")
     balance = balance-amount/2
     return balance
 
@@ -31,13 +31,13 @@ def sendMoney(balance):
             print("Insufficeint balance")   
         else:
             balance=balance-money
-            print(f"You have sucessfully sent Ghc{money} to {receipeint}\nYour balnce is GHc{balance}")
+            print(f"You have successfully sent Ghc{money} to {receipeint}\nYour balance is GHc{balance}")
     except:
             pass
     return balance
 
 while True :
-    short_code = input("Enter short code :")
+    short_code = input("Enter shortcode :")
     if short_code == "*123#":
         optionsMenu(optioins)
         choice = int(input(": __"))
