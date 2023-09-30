@@ -1,7 +1,9 @@
 import socket # socket module
 import configparser
 import threading
- 
+
+''' script binds to a port and responds to a connection '''
+
 def handle_client(ip,port):
     print(f"Got connection from {ip}") 
     ip.send(b"You have connected")
