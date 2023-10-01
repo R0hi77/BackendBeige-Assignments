@@ -1,26 +1,20 @@
 import socket # socket module
 import configparser
-import threading
 
-''' script binds to a port and responds to a connection '''
-
-def handle_client(ip,port):
-    print(f"Got connection from {ip}") 
-    ip.send(b"You have connected")
-    ip.close()
-
-
+''' script to bind to a port and respond to connections '''
+ 
 #configuration file path
-beigefilepath ="cohort1.txt"
+beigefilepath = "/home/petersburg/BackEnd Beige class/socket programming/cohort1.txt"
 
 #create a socket
 # AF_INET - IPv4 address family, SOCK_STREAM-  - TCP protocol
+
 s =socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 print("socket created sucessfully")
 
 # read the configuration file
 config = configparser.ConfigParser()
-config.read(beigefilepath) 
+config.read(open(beigefilepath))
 
 #port number and host ip
 host = '127.0.0.1' 
@@ -38,21 +32,21 @@ while True:
     (comm_socket, address) = s.accept()
 
     try:
-
-        t=threading.Thread(target=handle_client,args=(comm_socket,address))
-
-        t.start()
+        print(f"Got a connection from {comm_socket}")
+        comm_socket.send(b"You have connected")
 
         data = comm_socket.recv(1024).decode('utf-8').strip()
 
         with open(beigefilepath,mode='r')  as configfile:
             if data + '\n' in configfile.readlines():
                 response ="STRING FOUND"
-                print(response)
+                #print(response)
             else:
                 response = "STRING NOT FOUND"
-                print(response)
+                #print(response)
 
         comm_socket.sendall(response.encode('utf-8'))
     finally:
         comm_socket.close()
+
+
