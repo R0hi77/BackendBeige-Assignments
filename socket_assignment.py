@@ -20,7 +20,7 @@ print("socket created sucessfully")
 
 # read the configuration file
 config = configparser.ConfigParser()
-config.read('assignment_configfile.ini') 
+config.read(beigefilepath) 
 
 #port number and host ip
 host = '127.0.0.1' 
