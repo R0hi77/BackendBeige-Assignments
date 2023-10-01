@@ -11,7 +11,7 @@ def handle_client(ip,port):
 
 
 #configuration file path
-beigefilepath ="cohort1.ini"
+beigefilepath ="cohort1.txt"
 
 #create a socket
 # AF_INET - IPv4 address family, SOCK_STREAM-  - TCP protocol
