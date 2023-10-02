@@ -2,8 +2,9 @@ import socket # socket module
 import configparser
 
 '''
-script by : Nana Kwadwo and Petersburg
 server script that binds a port and responds to connections
+script by : Nana Kwadwo and Petersburg
+ 
 '''
 
 #configuration file path
